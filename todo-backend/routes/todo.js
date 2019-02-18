@@ -50,6 +50,20 @@ router.put("/:id", async (req, res) => {
     res.send(todo);
 });
 
+router.delete('/:id', async (req, res) => {
+    const todo = await todoModel.deleteTodo(req.params.id);
+
+    if(!todo){
+        let response = {
+            status : 404,
+            message : "Todo not found!"
+        }
+        return res.status(404).send(response);
+    }
+
+    res.send(todo);
+});
+
 function validateTodo(todo){
     // Validation
     const schema = {

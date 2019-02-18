@@ -44,6 +44,7 @@ async function getTodo(id){
     return result[0];
 }
 
+// To update todo details
 async function updateTodo(id, title, status){
     if(!mongoose.Types.ObjectId.isValid(id))
         return null;
@@ -61,7 +62,21 @@ async function updateTodo(id, title, status){
     return result;
 }
 
+// To delete a todo
+async function deleteTodo(id){
+    if(!mongoose.Types.ObjectId.isValid(id))
+        return null;
+
+    const todo = await Todo.findByIdAndDelete(id);
+
+    if(!todo)
+        return null;
+
+    return todo;
+}
+
 module.exports.getTodos = getTodos;
 module.exports.createTodo = createTodo;
 module.exports.getTodo = getTodo;
 module.exports.updateTodo = updateTodo;
+module.exports.deleteTodo = deleteTodo;
