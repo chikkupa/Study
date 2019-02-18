@@ -1,0 +1,4 @@
+{
+    "name" : "Todo API Backend | Development",
+    "mongo_connection" : "mongodb://localhost/todo-project"
+}
