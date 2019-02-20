@@ -2,6 +2,7 @@ const config = require('config');
 const express = require('express');
 const app = express();
 const todos = require('./routes/todo');
+const users = require('./routes/user');
 
 app.use(express.json());
 app.use(express.urlencoded({extended : true}));
@@ -15,6 +16,7 @@ app.use(function(req, res, next) {
 });
 
 app.use('/api/todos', todos);
+app.use('/api/users', users);
 
 console.log(config.get('name'));
 const port = process.env.PORT || 3000;
