@@ -26,6 +26,10 @@ const userSchema = new mongoose.Schema({
     }
 });
 
+userSchema.methods.generateAuthToken = function () {
+    
+}
+
 const User = mongoose.model('User', userSchema);
 
 // Registering a user
@@ -42,12 +46,11 @@ async function registerUser(name, email, password) {
 
 // To get details of a user
 async function isUserExist(email){
-    const result = await User.find({email : email})
-                            .select({name : 1});
+    const result = await User.find({email : email});
     if(result.length == 0)
         return false;
 
-    return true;
+    return result[0];
 }
 
 module.exports.registerUser = registerUser;

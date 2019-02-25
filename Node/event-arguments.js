@@ -7,3 +7,4 @@ eventEmitter.on("messageLogged", (arg) => {
 });
 
 eventEmitter.emit("messageLogged", {id: 1, name : "Chikku P A"})
+// Comment to be deleted

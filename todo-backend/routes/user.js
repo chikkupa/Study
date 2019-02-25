@@ -1,3 +1,6 @@
+
+const _ = require('lodash')
+const bcrypt = require('bcrypt')
 const Joi = require('joi');
 const express = require('express');
 const userModel = require('../model/user_model');
@@ -22,8 +25,11 @@ router.post("/", async function(req, res){
         return;
     }
 
-    const user = await userModel.registerUser(req.body.name, req.body.email, req.body.password);
-    res.send(user);
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(req.body.password, salt);
+    const user = await userModel.registerUser(req.body.name, req.body.email, hashedPassword);
+    
+    res.send(_.pick(user, ['_id', 'name', 'email']));
 });
 
 function validateUser(user){

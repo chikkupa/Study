@@ -1,3 +1,4 @@
 {
-    "name" : "Todo API Backend"
+    "name" : "Todo API Backend",
+    "jwt_private_key" : "" 
 }
