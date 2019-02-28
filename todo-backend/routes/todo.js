@@ -2,13 +2,14 @@ const Joi = require('joi');
 const express = require('express');
 const todoModel = require('../model/todo_model');
 const router = express.Router();
+const auth = require("../middleware/auth");
 
 router.get("/", async (req, res) => {
     const todos = await todoModel.getTodos();
     res.send(todos);
 });
 
-router.post("/", async (req, res) => {
+router.post("/", auth, async (req, res) => {
     // Validation
     const { error } = validateTodo(req.body)
 
