@@ -1,5 +1,6 @@
 const config = require("config");
 const mongoose = require("mongoose");
+const jwt = require('jsonwebtoken');
 
 mongoose.connect(config.get('mongo_connection'))
     .catch(err => console.log('Unable to connect to MongoDB'));
@@ -27,7 +28,8 @@ const userSchema = new mongoose.Schema({
 });
 
 userSchema.methods.generateAuthToken = function () {
-    
+    const token = jwt.sign({_id : this._id}, config.get('jwt_private_key'));
+    return token;
 }
 
 const User = mongoose.model('User', userSchema);

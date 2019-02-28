@@ -1,6 +1,4 @@
-const config = require('config');
-const _ = require('lodash');
-const jwt = require('jsonwebtoken');
+
 const bcrypt = require('bcrypt');
 const Joi = require('joi');
 const express = require('express');
@@ -37,7 +35,7 @@ router.post("/", async function(req, res){
         return;
     }
 
-    const token = jwt.sign({_id : user._id}, config.get('jwt_private_key'));
+    const token = user.generateAuthToken();
 
     res.header('x-auth-token', token).send({
         status : 200,
