@@ -43,4 +43,5 @@ function validateUser(user){
     return Joi.validate(user, schema);
 }
 
+
 module.exports = router;
