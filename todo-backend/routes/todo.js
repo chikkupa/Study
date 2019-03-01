@@ -4,12 +4,14 @@ const todoModel = require('../model/todo_model');
 const router = express.Router();
 const auth = require("../middleware/auth");
 
+router.use(auth);
+
 router.get("/", async (req, res) => {
     const todos = await todoModel.getTodos();
     res.send(todos);
 });
 
-router.post("/", auth, async (req, res) => {
+router.post("/", async (req, res) => {
     // Validation
     const { error } = validateTodo(req.body)
 
