@@ -55,5 +55,10 @@ async function isUserExist(email){
     return result[0];
 }
 
+async function getUserDetails(id){
+    const result = await User.findById(id).select("-passwod");
+    return result;
+}
+
 module.exports.registerUser = registerUser;
 module.exports.isUserExist = isUserExist;

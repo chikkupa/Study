@@ -13,7 +13,7 @@ function auth(req, res, next) {
     try{
         const decoded = jwt.verify(token, config.get('jwt_private_key'));
         req.user = decoded;
-        next();
+        next(); 1
     } catch (exception){
         res.status(400).send({
             status : 400,

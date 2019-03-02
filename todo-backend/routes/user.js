@@ -1,6 +1,7 @@
 
-const _ = require('lodash')
-const bcrypt = require('bcrypt')
+const auth = require("../middleware/auth");
+const _ = require('lodash');
+const bcrypt = require('bcrypt');
 const Joi = require('joi');
 const express = require('express');
 const userModel = require('../model/user_model');
@@ -30,6 +31,17 @@ router.post("/", async function(req, res){
     const user = await userModel.registerUser(req.body.name, req.body.email, hashedPassword);
     
     res.send(_.pick(user, ['_id', 'name', 'email']));
+});
+
+router.post("/me", auth, async function(req, res){
+    const user = await userModel.isUserExist(req.user._id);
+    if(!user){
+        res.status(400).send({
+            status : 400,
+            message : "User not found!"
+        });
+    }
+    res.send(user);
 });
 
 function validateUser(user){
