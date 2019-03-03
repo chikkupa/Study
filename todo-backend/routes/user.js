@@ -1,5 +1,6 @@
 
 const auth = require("../middleware/auth");
+const admin = require("../middleware/admin");
 const _ = require('lodash');
 const bcrypt = require('bcrypt');
 const Joi = require('joi');
@@ -33,13 +34,14 @@ router.post("/", async function(req, res){
     res.send(_.pick(user, ['_id', 'name', 'email']));
 });
 
-router.post("/me", auth, async function(req, res){
-    const user = await userModel.isUserExist(req.user._id);
+router.post("/me", [auth, admin], async function(req, res){
+    const user = await userModel.getUserDetails(req.user._id);
     if(!user){
         res.status(400).send({
             status : 400,
             message : "User not found!"
         });
+        return;
     }
     res.send(user);
 });

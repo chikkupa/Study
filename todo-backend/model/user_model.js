@@ -24,11 +24,12 @@ const userSchema = new mongoose.Schema({
         required : true,
         minlength : 5,
         maxlength : 1024
-    }
+    },
+    isAdmin : Boolean
 });
 
 userSchema.methods.generateAuthToken = function () {
-    const token = jwt.sign({_id : this._id}, config.get('jwt_private_key'));
+    const token = jwt.sign({_id : this._id, isAdmin : this.isAdmin }, config.get('jwt_private_key'));
     return token;
 }
 
@@ -56,9 +57,10 @@ async function isUserExist(email){
 }
 
 async function getUserDetails(id){
-    const result = await User.findById(id).select("-passwod");
+    const result = await User.findById(id).select("-password");
     return result;
 }
 
 module.exports.registerUser = registerUser;
 module.exports.isUserExist = isUserExist;
+module.exports.getUserDetails = getUserDetails;
