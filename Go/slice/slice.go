@@ -26,6 +26,15 @@ func main() {
 	newSlice = slice
 	fmt.Println(newSlice)
 
+	copy(newSlice, slice)
+	fmt.Println("After Copy")
+	newSlice[4] = 100
+	fmt.Println(newSlice)
+	fmt.Println(slice)
+
+	newSlice = append(slice[:2], slice[4:]...)
+	fmt.Println(newSlice)
+
 	strSlice := make([]string, 3)
 	strSlice[1] = "Slice Element 1"
 	fmt.Println(strSlice)
