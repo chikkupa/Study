@@ -22,4 +22,18 @@ func main() {
 	fmt.Println("Value of One: ", one, " Is One Present: ", onePresent)
 	fmt.Println("Value of Two: ", two, " Is Two Present: ", twoPresent)
 	fmt.Println(mapVar["two"])
+
+	colors := map[string]string{
+		"red":   "#ff0000",
+		"green": "#4bf745",
+		"white": "#ffffff",
+		"black": "#000000",
+	}
+
+	for color, hex := range colors {
+		fmt.Println(color, "=>", hex)
+	}
+
+	delete(colors, "green")
+	fmt.Println(colors)
 }
