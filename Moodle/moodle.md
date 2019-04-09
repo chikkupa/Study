@@ -1,5 +1,4 @@
 #Key Files in Moodle Directory
-
 	config.php - contains basic settings. This file does not come with Moodle. It is created when the install.php script runs or it can be created and edited manually.
 	install.php - the script that will run to create config.php
 	version.php - defines the current version of Moodle code
