@@ -29,9 +29,11 @@
 
 3. Using cache object
 	There are three basic basic operations. get, set, and delete
+	```php
 	$result = $cache->set('key', 'value'); // The result is true if the operation was a success, false otherwise
 	$data = $cache->get('key'); // $data will either be what ever was being stored in the cache, or false if the cache could not find the key
 	$result = $cache->delete('key'); // $result will either be true if the operation was a success, or false otherwise
+	```
 
 # Edit Template Files
 	Go to theme/{theme-name}/<template-file>.mustache
