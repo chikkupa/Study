@@ -1,10 +1,10 @@
-#Key Files in Moodle Directory
+# Key Files in Moodle Directory
 	config.php - contains basic settings. This file does not come with Moodle. It is created when the install.php script runs or it can be created and edited manually.
 	install.php - the script that will run to create config.php
 	version.php - defines the current version of Moodle code
 	index.php - the front page of the site
 
-##Moodle Directory Structure##
+# Moodle Directory Structure
 	admin/ - code to administrate the whole server
 	auth/ - plugin modules to authenticate users
 	blocks/ - plugin modules for the little side blocks on many pages
@@ -21,7 +21,7 @@
 	theme/ - theme packs/skins to change the look of the site
 	user/ - code to display and manage users
 
-##Caching##
+# Caching
 1. Add efinitions in the /lib/db/caches.php file, if the definition not exists
 
 2. Getting a cache object
@@ -33,10 +33,10 @@
 	$data = $cache->get('key'); // $data will either be what ever was being stored in the cache, or false if the cache could not find the key
 	$result = $cache->delete('key'); // $result will either be true if the operation was a success, or false otherwise
 
-##Edit Template Files##
+# Edit Template Files
 	Go to theme/{theme-name}/<template-file>.mustache
 
-##Access Database Files##
+# Access Database Files
 	1. The data manipulation API is exposed via public methods of the $DB object.
 	2. Moodle core takes care of setting up the connection to the database according to values specified in the main config.php file.
 	3. The $DB global object is an instance of the moodle_database class. It is instantiated automatically during the bootstrap setup, i.e. as a part of including the main config.php file.
