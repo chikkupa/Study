@@ -13,17 +13,23 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var Cell = /** @class */ (function () {
     function Cell() {
-        this.value = 0;
+        this.value = Cell.EMPTY;
     }
-    Cell.prototype.setValue = function (value) {
-        this.value = value;
+    Cell.prototype.setO = function () {
+        this.value = Cell.O;
+    };
+    Cell.prototype.setX = function () {
+        this.value = Cell.X;
     };
     Cell.prototype.getValue = function () {
         return this.value;
     };
     Cell.prototype.clear = function () {
-        this.value = 0;
+        this.value = Cell.EMPTY;
     };
+    Cell.EMPTY = 0;
+    Cell.O = 1;
+    Cell.X = 2;
     return Cell;
 }());
 var Board = /** @class */ (function () {
@@ -40,6 +46,23 @@ var Board = /** @class */ (function () {
     Board.prototype.getCell = function (x, y) {
         return this.cells[x][y];
     };
+    Board.prototype.isSetRow = function (row) {
+        if (this.cells[row][0].getValue() != Cell.EMPTY && this.cells[row][0].getValue() == this.cells[row][1].getValue() && this.cells[row][1].getValue() == this.cells[row][2].getValue())
+            return true;
+        return false;
+    };
+    Board.prototype.isSetColumn = function (column) {
+        if (this.cells[0][column].getValue() != Cell.EMPTY && this.cells[0][column].getValue() == this.cells[1][column].getValue() && this.cells[1][column].getValue() == this.cells[2][column].getValue())
+            return true;
+        return false;
+    };
+    Board.prototype.isSetDiagonal = function () {
+        if (this.cells[0][0].getValue() != Cell.EMPTY && this.cells[0][0].getValue() == this.cells[1][1].getValue() && this.cells[1][1].getValue() == this.cells[2][2].getValue())
+            return true;
+        if (this.cells[0][2].getValue() != Cell.EMPTY && this.cells[0][2].getValue() == this.cells[1][1].getValue() && this.cells[1][1].getValue() == this.cells[2][0].getValue())
+            return true;
+        return false;
+    };
     Board.prototype.clear = function () {
         for (var i = 0; i < 3; i++) {
             for (var j = 0; j < 3; j++) {
@@ -49,11 +72,37 @@ var Board = /** @class */ (function () {
     };
     return Board;
 }());
-var Game = /** @class */ (function (_super) {
-    __extends(Game, _super);
-    function Game() {
+var TicTacToe = /** @class */ (function (_super) {
+    __extends(TicTacToe, _super);
+    function TicTacToe() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    return Game;
+    TicTacToe.prototype.start = function () {
+        console.log("Game started");
+        this.player = 0;
+        this.displayCanvas();
+    };
+    TicTacToe.prototype.isFinished = function () {
+        if (_super.prototype.isSetRow.call(this, 0) || _super.prototype.isSetRow.call(this, 1) || _super.prototype.isSetRow.call(this, 2)
+            || _super.prototype.isSetColumn.call(this, 0) || _super.prototype.isSetColumn.call(this, 1) || _super.prototype.isSetColumn.call(this, 2)
+            || _super.prototype.isSetDiagonal.call(this))
+            return true;
+        return false;
+    };
+    TicTacToe.prototype.restart = function () {
+        _super.prototype.clear.call(this);
+        this.displayCanvas();
+    };
+    TicTacToe.prototype.displayCanvas = function () {
+    };
+    TicTacToe.prototype.click = function (x, y) {
+        if (this.player == TicTacToe.PLAYER1)
+            _super.prototype.getCell.call(this, x, y).setO();
+        else if (this.player == TicTacToe.PLAYER2)
+            _super.prototype.getCell.call(this, x, y).setX();
+        this.player ^= 1;
+    };
+    TicTacToe.PLAYER1 = 0;
+    TicTacToe.PLAYER2 = 1;
+    return TicTacToe;
 }(Board));
-var game = new Game();
