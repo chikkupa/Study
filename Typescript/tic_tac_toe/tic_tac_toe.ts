@@ -64,6 +64,16 @@ class Board {
         return false;
     }
 
+    protected isAllCellFilled():boolean{
+        let result:boolean = true;
+        for(let i = 0; i < 3; i++){
+            for(let j = 0; j < 3; j++){
+                if(this.cells[i][j].getValue() == Cell.EMPTY)
+                    return false;
+            }
+        }
+        return true;
+    }
     protected clear(){
         for(let i = 0; i < 3; i++){
             for(let j = 0; j < 3; j++){
@@ -84,8 +94,11 @@ class TicTacToe extends Board implements Game {
     private player:number;
     public static PLAYER1 = 0;
     public static PLAYER2 = 1;
+    public static NOPLAYER = -1;
+    public winner:number;
 
     public start():void{
+        this.winner
         console.log("Game started");
         this.player = 0;
         this.displayCanvas();
@@ -94,9 +107,19 @@ class TicTacToe extends Board implements Game {
     public isFinished():boolean{
         if(super.isSetRow(0) || super.isSetRow(1) || super.isSetRow(2)
             || super.isSetColumn(0) || super.isSetColumn(1) || super.isSetColumn(2)
-            || super.isSetDiagonal())
+            || super.isSetDiagonal()){
+            this.winner = this.player ^ 1;
             return true;
+        }
+        else if(super.isAllCellFilled()){
+            this.winner = TicTacToe.NOPLAYER;
+            return true;
+        }
         return false;
+    }
+
+    public getWinner():number{
+        return this.winner;
     }
 
     public restart():void{
@@ -108,12 +131,15 @@ class TicTacToe extends Board implements Game {
 
     }
 
-    public click(x:number, y:number):void{
+    public click(x:number, y:number):string{
         if(this.player == TicTacToe.PLAYER1)
             super.getCell(x, y).setO();
         else if(this.player == TicTacToe.PLAYER2)
             super.getCell(x, y).setX();
 
+        let value = ['O', 'X'][this.player];
         this.player ^= 1;
+
+        return value;
     }
 }

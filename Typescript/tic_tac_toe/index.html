@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+td {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="tic_tac_toe.js"></script>
+<script>
+var game1 = new TicTacToe();
+
+$(document).ready(function(){
+    game1.start();
+});
+
+function clicked(x, y){
+    var val = game1.click(x, y);
+    console.log(val);
+    $("#cell" + x + y).html(val);
+
+    if(game1.isFinished()){
+        var winner = game1.getWinner();
+        if(winner == TicTacToe.PLAYER1)
+            alert("Player 1 Win the match!");
+        else if(winner == TicTacToe.PLAYER2)
+            alert("Player 2 Win the match!");
+        else
+            alert("Game Tied!");
+    }
+}
+</script>
+</head>
+<body>
+
+<table border=1>
+    <tr>
+        <td id="cell00" onclick="clicked(0, 0)">&nbsp;</td>
+        <td id="cell01" onclick="clicked(0, 1)">&nbsp;</td>
+        <td id="cell02" onclick="clicked(0, 2)">&nbsp;</td>
+    </tr>
+    <tr>
+        <td id="cell10" onclick="clicked(1, 0)">&nbsp;</td>
+        <td id="cell11" onclick="clicked(1, 1)">&nbsp;</td>
+        <td id="cell12" onclick="clicked(1, 2)">&nbsp;</td>
+    </tr>
+    <tr>
+        <td id="cell20" onclick="clicked(2, 0)">&nbsp;</td>
+        <td id="cell21" onclick="clicked(2, 1)">&nbsp;</td>
+        <td id="cell22" onclick="clicked(2, 2)">&nbsp;</td>
+    </tr>
+</table>
+
+</body>
+</html>

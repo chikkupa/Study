@@ -63,6 +63,16 @@ var Board = /** @class */ (function () {
             return true;
         return false;
     };
+    Board.prototype.isAllCellFilled = function () {
+        var result = true;
+        for (var i = 0; i < 3; i++) {
+            for (var j = 0; j < 3; j++) {
+                if (this.cells[i][j].getValue() == Cell.EMPTY)
+                    return false;
+            }
+        }
+        return true;
+    };
     Board.prototype.clear = function () {
         for (var i = 0; i < 3; i++) {
             for (var j = 0; j < 3; j++) {
@@ -78,6 +88,7 @@ var TicTacToe = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     TicTacToe.prototype.start = function () {
+        this.winner;
         console.log("Game started");
         this.player = 0;
         this.displayCanvas();
@@ -85,9 +96,18 @@ var TicTacToe = /** @class */ (function (_super) {
     TicTacToe.prototype.isFinished = function () {
         if (_super.prototype.isSetRow.call(this, 0) || _super.prototype.isSetRow.call(this, 1) || _super.prototype.isSetRow.call(this, 2)
             || _super.prototype.isSetColumn.call(this, 0) || _super.prototype.isSetColumn.call(this, 1) || _super.prototype.isSetColumn.call(this, 2)
-            || _super.prototype.isSetDiagonal.call(this))
+            || _super.prototype.isSetDiagonal.call(this)) {
+            this.winner = this.player ^ 1;
             return true;
+        }
+        else if (_super.prototype.isAllCellFilled.call(this)) {
+            this.winner = TicTacToe.NOPLAYER;
+            return true;
+        }
         return false;
+    };
+    TicTacToe.prototype.getWinner = function () {
+        return this.winner;
     };
     TicTacToe.prototype.restart = function () {
         _super.prototype.clear.call(this);
@@ -100,9 +120,12 @@ var TicTacToe = /** @class */ (function (_super) {
             _super.prototype.getCell.call(this, x, y).setO();
         else if (this.player == TicTacToe.PLAYER2)
             _super.prototype.getCell.call(this, x, y).setX();
+        var value = ['O', 'X'][this.player];
         this.player ^= 1;
+        return value;
     };
     TicTacToe.PLAYER1 = 0;
     TicTacToe.PLAYER2 = 1;
+    TicTacToe.NOPLAYER = -1;
     return TicTacToe;
 }(Board));
