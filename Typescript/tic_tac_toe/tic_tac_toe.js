@@ -121,7 +121,7 @@ var TicTacToe = /** @class */ (function (_super) {
     TicTacToe.prototype.restart = function () {
         _super.prototype.clear.call(this);
         this.displayCanvas();
-        this.player = 0;
+        this.player ^= 1;
     };
     TicTacToe.prototype.displayCanvas = function () {
     };

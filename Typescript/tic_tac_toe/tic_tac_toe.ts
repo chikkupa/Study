@@ -136,7 +136,7 @@ class TicTacToe extends Board implements Game {
     public restart():void{
         super.clear();
         this.displayCanvas();
-        this.player = 0;
+        this.player ^= 1;
     }
 
     public displayCanvas():void{
