@@ -45,7 +45,6 @@ var Cell = /** @class */ (function () {
 }());
 var Board = /** @class */ (function () {
     function Board() {
-        console.log("In Super Constructor");
         this.cells = [];
         for (var i = 0; i < 3; i++) {
             this.cells[i] = [];
@@ -99,8 +98,7 @@ var TicTacToe = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     TicTacToe.prototype.start = function () {
-        this.winner;
-        console.log("Game started");
+        this.winner = TicTacToe.NOPLAYER;
         this.player = 0;
         this.displayCanvas();
     };

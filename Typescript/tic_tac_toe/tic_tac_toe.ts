@@ -42,7 +42,6 @@ class Board {
     protected cells : Cell[][];
 
     constructor(){
-        console.log("In Super Constructor");
         this.cells = [];
 
         for(let i = 0; i < 3; i++){
@@ -111,8 +110,7 @@ class TicTacToe extends Board implements Game {
     public winner:number;
 
     public start():void{
-        this.winner
-        console.log("Game started");
+        this.winner = TicTacToe.NOPLAYER;
         this.player = 0;
         this.displayCanvas();
     }
