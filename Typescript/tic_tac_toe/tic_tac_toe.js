@@ -14,18 +14,29 @@ var __extends = (this && this.__extends) || (function () {
 var Cell = /** @class */ (function () {
     function Cell() {
         this.value = Cell.EMPTY;
+        this.locked = false;
     }
     Cell.prototype.setO = function () {
-        this.value = Cell.O;
+        if (!this.locked) {
+            this.value = Cell.O;
+            this.locked = true;
+        }
     };
     Cell.prototype.setX = function () {
-        this.value = Cell.X;
+        if (!this.locked) {
+            this.value = Cell.X;
+            this.locked = true;
+        }
     };
     Cell.prototype.getValue = function () {
         return this.value;
     };
+    Cell.prototype.isLocked = function () {
+        return this.locked;
+    };
     Cell.prototype.clear = function () {
         this.value = Cell.EMPTY;
+        this.locked = false;
     };
     Cell.EMPTY = 0;
     Cell.O = 1;
@@ -112,17 +123,21 @@ var TicTacToe = /** @class */ (function (_super) {
     TicTacToe.prototype.restart = function () {
         _super.prototype.clear.call(this);
         this.displayCanvas();
+        this.player = 0;
     };
     TicTacToe.prototype.displayCanvas = function () {
     };
     TicTacToe.prototype.click = function (x, y) {
-        if (this.player == TicTacToe.PLAYER1)
-            _super.prototype.getCell.call(this, x, y).setO();
-        else if (this.player == TicTacToe.PLAYER2)
-            _super.prototype.getCell.call(this, x, y).setX();
-        var value = ['O', 'X'][this.player];
-        this.player ^= 1;
-        return value;
+        if (!_super.prototype.getCell.call(this, x, y).isLocked()) {
+            if (this.player == TicTacToe.PLAYER1)
+                _super.prototype.getCell.call(this, x, y).setO();
+            else if (this.player == TicTacToe.PLAYER2)
+                _super.prototype.getCell.call(this, x, y).setX();
+            var value = ['O', 'X'][this.player];
+            this.player ^= 1;
+            return value;
+        }
+        return '';
     };
     TicTacToe.PLAYER1 = 0;
     TicTacToe.PLAYER2 = 1;

@@ -2,6 +2,34 @@
 <html>
 <head>
 <style>
+.title{
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.container{
+    width: 100%;
+    text-align: center;
+}
+
+.point-box {
+    width: 300px;
+    height: 200px; 
+    display: inline-block;
+    vertical-align: top;
+}
+
+.player-sec {
+    margin-top: 100px; 
+    font-size: 30px;
+}
+
+.point-display {
+    font-weght: bold; 
+    font-size: 40px;
+}
+
 td {
     width: 100px;
     height: 100px;
@@ -14,6 +42,9 @@ td {
 <script src="tic_tac_toe.js"></script>
 <script>
 var game1 = new TicTacToe();
+var player1 = 0;
+var player2 = 0;
+var tied = 0;
 
 $(document).ready(function(){
     game1.start();
@@ -22,39 +53,80 @@ $(document).ready(function(){
 function clicked(x, y){
     var val = game1.click(x, y);
     console.log(val);
-    $("#cell" + x + y).html(val);
+
+    if(val != '')
+        $("#cell" + x + y).html(val);
 
     if(game1.isFinished()){
         var winner = game1.getWinner();
-        if(winner == TicTacToe.PLAYER1)
+        if(winner == TicTacToe.PLAYER1){
+            player1++;
+            $("#player1-win").html(player1);
             alert("Player 1 Win the match!");
-        else if(winner == TicTacToe.PLAYER2)
+        }
+        else if(winner == TicTacToe.PLAYER2){
+            player2++;
+            $("#player2-win").html(player2);
             alert("Player 2 Win the match!");
-        else
+        }
+        else{
+            tied++;
+            $("#game-tied").html(tied);
             alert("Game Tied!");
+        }
+    }
+}
+
+function restart(){
+    game1.restart();
+
+    for(var i = 0; i < 3; i++){
+        for(var j = 0; j < 3; j++){
+            $("#cell" + i + j).html("");
+        }
     }
 }
 </script>
 </head>
 <body>
 
-<table border=1>
-    <tr>
-        <td id="cell00" onclick="clicked(0, 0)">&nbsp;</td>
-        <td id="cell01" onclick="clicked(0, 1)">&nbsp;</td>
-        <td id="cell02" onclick="clicked(0, 2)">&nbsp;</td>
-    </tr>
-    <tr>
-        <td id="cell10" onclick="clicked(1, 0)">&nbsp;</td>
-        <td id="cell11" onclick="clicked(1, 1)">&nbsp;</td>
-        <td id="cell12" onclick="clicked(1, 2)">&nbsp;</td>
-    </tr>
-    <tr>
-        <td id="cell20" onclick="clicked(2, 0)">&nbsp;</td>
-        <td id="cell21" onclick="clicked(2, 1)">&nbsp;</td>
-        <td id="cell22" onclick="clicked(2, 2)">&nbsp;</td>
-    </tr>
-</table>
-
+<div class="container">
+    <div class="title">
+    Tic Tac Toe
+    </div>
+    <div class="point-box">
+        <div class="player-sec">
+            Player 1 : <span id="player1-win" class="point-display">0</span>
+        </div>
+    </div>
+    <table border=1 style="display: inline-block;">
+        <tr>
+            <td id="cell00" onclick="clicked(0, 0)">&nbsp;</td>
+            <td id="cell01" onclick="clicked(0, 1)">&nbsp;</td>
+            <td id="cell02" onclick="clicked(0, 2)">&nbsp;</td>
+        </tr>
+        <tr>
+            <td id="cell10" onclick="clicked(1, 0)">&nbsp;</td>
+            <td id="cell11" onclick="clicked(1, 1)">&nbsp;</td>
+            <td id="cell12" onclick="clicked(1, 2)">&nbsp;</td>
+        </tr>
+        <tr>
+            <td id="cell20" onclick="clicked(2, 0)">&nbsp;</td>
+            <td id="cell21" onclick="clicked(2, 1)">&nbsp;</td>
+            <td id="cell22" onclick="clicked(2, 2)">&nbsp;</td>
+        </tr>
+    </table>
+    <div class="point-box">
+        <div class="player-sec">
+            Player 2 : <span id="player2-win" class="point-display">0</span>
+        </div>
+    </div>
+<div>
+<div class="point-box">
+        <div class="player-sec">
+            Tied : <span id="game-tied" class="point-display">0</span>
+        </div>
+    </div>
+<div><button onclick="restart()">Restart</button></div>
 </body>
 </html>

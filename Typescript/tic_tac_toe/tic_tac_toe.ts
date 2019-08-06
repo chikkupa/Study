@@ -34,6 +34,7 @@ class Cell {
 
     public clear():void{
         this.value = Cell.EMPTY;
+        this.locked = false;
     }
 }
 
@@ -137,6 +138,7 @@ class TicTacToe extends Board implements Game {
     public restart():void{
         super.clear();
         this.displayCanvas();
+        this.player = 0;
     }
 
     public displayCanvas():void{
@@ -144,12 +146,11 @@ class TicTacToe extends Board implements Game {
     }
 
     public click(x:number, y:number):string{
-        if(this.player == TicTacToe.PLAYER1)
-            super.getCell(x, y).setO();
-        else if(this.player == TicTacToe.PLAYER2)
-            super.getCell(x, y).setX();
-
         if(!super.getCell(x, y).isLocked()){
+            if(this.player == TicTacToe.PLAYER1)
+                super.getCell(x, y).setO();
+            else if(this.player == TicTacToe.PLAYER2)
+                super.getCell(x, y).setX();
             let value = ['O', 'X'][this.player];
             this.player ^= 1;
 
