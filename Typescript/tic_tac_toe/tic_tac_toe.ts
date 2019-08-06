@@ -1,23 +1,35 @@
 class Cell {
     private value : number;
+    private locked : boolean;
     public static EMPTY = 0;
     public static O = 1;
     public static X = 2;
     
     constructor(){
         this.value = Cell.EMPTY;
+        this.locked = false;
     }
 
     public setO():void{
-        this.value = Cell.O;
+        if(!this.locked){
+            this.value = Cell.O;
+            this.locked = true;
+        }
     }
 
     public setX():void{
-        this.value = Cell.X;
+        if(!this.locked){
+            this.value = Cell.X;
+            this.locked = true;
+        }
     }
 
     public getValue():number{
         return this.value;
+    }
+
+    public isLocked():boolean{
+        return this.locked;
     }
 
     public clear():void{
@@ -137,9 +149,12 @@ class TicTacToe extends Board implements Game {
         else if(this.player == TicTacToe.PLAYER2)
             super.getCell(x, y).setX();
 
-        let value = ['O', 'X'][this.player];
-        this.player ^= 1;
+        if(!super.getCell(x, y).isLocked()){
+            let value = ['O', 'X'][this.player];
+            this.player ^= 1;
 
-        return value;
+            return value;
+        }
+        return '';
     }
 }

@@ -46,6 +46,7 @@ class Car{
 };
 
 int main(){
-    Car polo("Volkswagen", "Polo", 5, "Green", 200);
-    polo.print();
+    Car *polo = new Car("Volkswagen", "Polo", 5, "Green", 200);
+    polo->print();
+    delete polo;
 }

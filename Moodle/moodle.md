@@ -57,3 +57,6 @@
 		    // You can access the database via the $DB method calls here.
 		}
 	Reference: https://docs.moodle.org/dev/Data_manipulation_API
+
+## Lesson settings
+https://docs.moodle.org/36/en/Lesson_settings
