@@ -1,3 +1,4 @@
+"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -8,46 +9,15 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var Cell = /** @class */ (function () {
-    function Cell(value) {
-        this.value = value;
-        this.value = Cell.EMPTY;
-        this.locked = false;
-    }
-    Cell.prototype.setO = function () {
-        if (!this.locked) {
-            this.value = Cell.O;
-            this.locked = true;
-        }
-    };
-    Cell.prototype.setX = function () {
-        if (!this.locked) {
-            this.value = Cell.X;
-            this.locked = true;
-        }
-    };
-    Cell.prototype.getValue = function () {
-        return this.value;
-    };
-    Cell.prototype.isLocked = function () {
-        return this.locked;
-    };
-    Cell.prototype.clear = function () {
-        this.value = Cell.EMPTY;
-        this.locked = false;
-    };
-    Cell.EMPTY = 0;
-    Cell.O = 1;
-    Cell.X = 2;
-    return Cell;
-}());
+exports.__esModule = true;
+var Cell_1 = require("./Cell");
 var Board = /** @class */ (function () {
     function Board() {
         this.cells = [];
         for (var i = 0; i < 3; i++) {
             this.cells[i] = [];
             for (var j = 0; j < 3; j++) {
-                this.cells[i][j] = new Cell();
+                this.cells[i][j] = new Cell_1.Cell();
             }
         }
     }
@@ -55,19 +25,19 @@ var Board = /** @class */ (function () {
         return this.cells[x][y];
     };
     Board.prototype.isSetRow = function (row) {
-        if (this.cells[row][0].getValue() != Cell.EMPTY && this.cells[row][0].getValue() == this.cells[row][1].getValue() && this.cells[row][1].getValue() == this.cells[row][2].getValue())
+        if (this.cells[row][0].getValue() != Cell_1.Cell.EMPTY && this.cells[row][0].getValue() == this.cells[row][1].getValue() && this.cells[row][1].getValue() == this.cells[row][2].getValue())
             return true;
         return false;
     };
     Board.prototype.isSetColumn = function (column) {
-        if (this.cells[0][column].getValue() != Cell.EMPTY && this.cells[0][column].getValue() == this.cells[1][column].getValue() && this.cells[1][column].getValue() == this.cells[2][column].getValue())
+        if (this.cells[0][column].getValue() != Cell_1.Cell.EMPTY && this.cells[0][column].getValue() == this.cells[1][column].getValue() && this.cells[1][column].getValue() == this.cells[2][column].getValue())
             return true;
         return false;
     };
     Board.prototype.isSetDiagonal = function () {
-        if (this.cells[0][0].getValue() != Cell.EMPTY && this.cells[0][0].getValue() == this.cells[1][1].getValue() && this.cells[1][1].getValue() == this.cells[2][2].getValue())
+        if (this.cells[0][0].getValue() != Cell_1.Cell.EMPTY && this.cells[0][0].getValue() == this.cells[1][1].getValue() && this.cells[1][1].getValue() == this.cells[2][2].getValue())
             return true;
-        if (this.cells[0][2].getValue() != Cell.EMPTY && this.cells[0][2].getValue() == this.cells[1][1].getValue() && this.cells[1][1].getValue() == this.cells[2][0].getValue())
+        if (this.cells[0][2].getValue() != Cell_1.Cell.EMPTY && this.cells[0][2].getValue() == this.cells[1][1].getValue() && this.cells[1][1].getValue() == this.cells[2][0].getValue())
             return true;
         return false;
     };
@@ -75,7 +45,7 @@ var Board = /** @class */ (function () {
         var result = true;
         for (var i = 0; i < 3; i++) {
             for (var j = 0; j < 3; j++) {
-                if (this.cells[i][j].getValue() == Cell.EMPTY)
+                if (this.cells[i][j].getValue() == Cell_1.Cell.EMPTY)
                     return false;
             }
         }
