@@ -8,6 +8,12 @@ class App extends React.Component {
       counter: 0
     }
   }
+
+  counter(value) {
+    this.setState({
+      counter: this.state.counter + value
+    })
+  }
   
   render(){
     const {counter} = this.state;
@@ -16,9 +22,18 @@ class App extends React.Component {
       <Fragment>
         <h3>Counter: {counter} </h3>
         <div>
-          <button style={buttonMargins}>Increment</button>
-          <button style={buttonMargins}>Decrement</button>
-          <button style={buttonMargins}>Reset</button>
+          <button
+           style={buttonMargins}
+           onClick={() => this.counter(1)}
+           >Increment</button>
+          <button 
+            style={buttonMargins}
+            onClick={() => this.counter(-1)}
+            >Decrement</button>
+          <button 
+            style={buttonMargins}
+            onClick={() => this.counter(-counter)}
+            >Reset</button>
         </div>
       </Fragment>
     );
