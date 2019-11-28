@@ -1,119 +1,119 @@
 // Inputs Required
-// .ClassName:string
+// .Input.ClassName:string
 // .ShortName:string
-// .List:boolean
-// .Add:boolean
-// .Delete:boolean
-// .Update:boolean
-// .Search:boolean
+// .Input.List:boolean
+// .Input.Add:boolean
+// .Input.Delete:boolean
+// .Input.Update:boolean
+// .Input.Search:boolean
 
 const initialState = {
-  {{if or .List .Search}}planFeatureList: [],{{end}}
+  {{if or .Input.List .Input.Search}}planFeatureList: [],{{end}}
   isLoading: false,
   error: undefined,
   meta: {},
   isLoadingSave: false,
-  {{if or .List .Search}}totalFeatures: 0,{{end}}
+  {{if or .Input.List .Input.Search}}totalFeatures: 0,{{end}}
 };
 
-{{if .List}}
-export const {{.getConstantName .ClassName}}_LIST_FETCH_START =
-  "@{{.getLowerConstantName .ClassName}}/{{.getConstantName .ClassName}}_LIST_FETCH_START";
-export const {{.getConstantName .ClassName}}_LIST_FETCH_LOADING =
-  "@{{.getLowerConstantName .ClassName}}/{{.getConstantName .ClassName}}_LIST_FETCH_LOADING";
-export const {{.getConstantName .ClassName}}_LIST_FETCH_LOADING_COMPLETE =
-  "@{{.getLowerConstantName .ClassName}}/{{.getConstantName .ClassName}}_LIST_FETCH_LOADING_COMPLETE";
-export const {{.getConstantName .ClassName}}_LIST_FETCH_SUCCESS =
-  "@{{.getLowerConstantName .ClassName}}/{{.getConstantName .ClassName}}_LIST_FETCH_SUCCESS";
-export const {{.getConstantName .ClassName}}_LIST_FETCH_FAILED =
-  "@{{.getLowerConstantName .ClassName}}/{{.getConstantName .ClassName}}_LIST_FETCH_FAILED";
-export const {{.getConstantName .ClassName}}_LIST_FETCH_NON_BLOCKING =
-  "@{{.getLowerConstantName .ClassName}}/{{.getConstantName .ClassName}}_LIST_FETCH_NON_BLOCKING";
+{{if .Input.List}}
+export const {{call .GetConstantName .Input.ClassName}}_LIST_FETCH_START =
+  "@{{call .GetLowerConstantName .Input.ClassName}}/{{call .GetConstantName .Input.ClassName}}_LIST_FETCH_START";
+export const {{call .GetConstantName .Input.ClassName}}_LIST_FETCH_LOADING =
+  "@{{call .GetLowerConstantName .Input.ClassName}}/{{call .GetConstantName .Input.ClassName}}_LIST_FETCH_LOADING";
+export const {{call .GetConstantName .Input.ClassName}}_LIST_FETCH_LOADING_COMPLETE =
+  "@{{call .GetLowerConstantName .Input.ClassName}}/{{call .GetConstantName .Input.ClassName}}_LIST_FETCH_LOADING_COMPLETE";
+export const {{call .GetConstantName .Input.ClassName}}_LIST_FETCH_SUCCESS =
+  "@{{call .GetLowerConstantName .Input.ClassName}}/{{call .GetConstantName .Input.ClassName}}_LIST_FETCH_SUCCESS";
+export const {{call .GetConstantName .Input.ClassName}}_LIST_FETCH_FAILED =
+  "@{{call .GetLowerConstantName .Input.ClassName}}/{{call .GetConstantName .Input.ClassName}}_LIST_FETCH_FAILED";
+export const {{call .GetConstantName .Input.ClassName}}_LIST_FETCH_NON_BLOCKING =
+  "@{{call .GetLowerConstantName .Input.ClassName}}/{{call .GetConstantName .Input.ClassName}}_LIST_FETCH_NON_BLOCKING";
 {{end}}
-{{if .ADD}}
-export const ADD_{{.getConstantName .ClassName}}_START =
-  "@{{.getLowerConstantName .ClassName}}/ADD_{{.getConstantName .ClassName}}_START";
-export const ADD_{{.getConstantName .ClassName}}_LOADING =
-  "@{{.getLowerConstantName .ClassName}}/ADD_{{.getConstantName .ClassName}}_LOADING";
-export const ADD_{{.getConstantName .ClassName}}_LOADING_COMPLETE =
-  "@{{.getLowerConstantName .ClassName}}/ADD_{{.getConstantName .ClassName}}_LOADING_COMPLETE";
-export const ADD_{{.getConstantName .ClassName}}_SUCCESS =
-  "@{{.getLowerConstantName .ClassName}}/ADD_{{.getConstantName .ClassName}}_SUCCESS";
-export const ADD_{{.getConstantName .ClassName}}_FAILED =
-  "@{{.getLowerConstantName .ClassName}}/ADD_{{.getConstantName .ClassName}}_FAILED";
+{{if .Input.Add}}
+export const ADD_{{call .GetConstantName .Input.ClassName}}_START =
+  "@{{call .GetLowerConstantName .Input.ClassName}}/ADD_{{call .GetConstantName .Input.ClassName}}_START";
+export const ADD_{{call .GetConstantName .Input.ClassName}}_LOADING =
+  "@{{call .GetLowerConstantName .Input.ClassName}}/ADD_{{call .GetConstantName .Input.ClassName}}_LOADING";
+export const ADD_{{call .GetConstantName .Input.ClassName}}_LOADING_COMPLETE =
+  "@{{call .GetLowerConstantName .Input.ClassName}}/ADD_{{call .GetConstantName .Input.ClassName}}_LOADING_COMPLETE";
+export const ADD_{{call .GetConstantName .Input.ClassName}}_SUCCESS =
+  "@{{call .GetLowerConstantName .Input.ClassName}}/ADD_{{call .GetConstantName .Input.ClassName}}_SUCCESS";
+export const ADD_{{call .GetConstantName .Input.ClassName}}_FAILED =
+  "@{{call .GetLowerConstantName .Input.ClassName}}/ADD_{{call .GetConstantName .Input.ClassName}}_FAILED";
 {{end}}
-{{if .Delete}}
-export const DELETE_{{.getConstantName .ClassName}}_START =
-  "@{{.getLowerConstantName .ClassName}}/DELETE_{{.getConstantName .ClassName}}_START";
-export const DELETE_{{.getConstantName .ClassName}}_LOADING =
-  "@{{.getLowerConstantName .ClassName}}/DELETE_{{.getConstantName .ClassName}}_LOADING";
-export const DELETE_{{.getConstantName .ClassName}}_LOADING_COMPLETE =
-  "@{{.getLowerConstantName .ClassName}}/DELETE_{{.getConstantName .ClassName}}_LOADING_COMPLETE";
-export const DELETE_{{.getConstantName .ClassName}}_SUCCESS =
-  "@{{.getLowerConstantName .ClassName}}/DELETE_{{.getConstantName .ClassName}}_SUCCESS";
-export const DELETE_{{.getConstantName .ClassName}}_FAILED =
-  "@{{.getLowerConstantName .ClassName}}/DELETE_{{.getConstantName .ClassName}}_FAILED";
+{{if .Input.Delete}}
+export const DELETE_{{call .GetConstantName .Input.ClassName}}_START =
+  "@{{call .GetLowerConstantName .Input.ClassName}}/DELETE_{{call .GetConstantName .Input.ClassName}}_START";
+export const DELETE_{{call .GetConstantName .Input.ClassName}}_LOADING =
+  "@{{call .GetLowerConstantName .Input.ClassName}}/DELETE_{{call .GetConstantName .Input.ClassName}}_LOADING";
+export const DELETE_{{call .GetConstantName .Input.ClassName}}_LOADING_COMPLETE =
+  "@{{call .GetLowerConstantName .Input.ClassName}}/DELETE_{{call .GetConstantName .Input.ClassName}}_LOADING_COMPLETE";
+export const DELETE_{{call .GetConstantName .Input.ClassName}}_SUCCESS =
+  "@{{call .GetLowerConstantName .Input.ClassName}}/DELETE_{{call .GetConstantName .Input.ClassName}}_SUCCESS";
+export const DELETE_{{call .GetConstantName .Input.ClassName}}_FAILED =
+  "@{{call .GetLowerConstantName .Input.ClassName}}/DELETE_{{call .GetConstantName .Input.ClassName}}_FAILED";
 {{end}}
-{{if .Update}}
-export const EDIT_{{.getConstantName .ClassName}}_START =
-  "@{{.getLowerConstantName .ClassName}}/EDIT_{{.getConstantName .ClassName}}_START";
-export const EDIT_{{.getConstantName .ClassName}}_LOADING =
-  "@{{.getLowerConstantName .ClassName}}/EDIT_{{.getConstantName .ClassName}}_LOADING";
-export const EDIT_{{.getConstantName .ClassName}}_LOADING_COMPLETE =
-  "@{{.getLowerConstantName .ClassName}}/EDIT_{{.getConstantName .ClassName}}_LOADING_COMPLETE";
-export const EDIT_{{.getConstantName .ClassName}}_SUCCESS =
-  "@{{.getLowerConstantName .ClassName}}/EDIT_{{.getConstantName .ClassName}}_SUCCESS";
-export const EDIT_{{.getConstantName .ClassName}}_FAILED =
-  "@{{.getLowerConstantName .ClassName}}/EDIT_{{.getConstantName .ClassName}}_FAILED";
+{{if .Input.Update}}
+export const EDIT_{{call .GetConstantName .Input.ClassName}}_START =
+  "@{{call .GetLowerConstantName .Input.ClassName}}/EDIT_{{call .GetConstantName .Input.ClassName}}_START";
+export const EDIT_{{call .GetConstantName .Input.ClassName}}_LOADING =
+  "@{{call .GetLowerConstantName .Input.ClassName}}/EDIT_{{call .GetConstantName .Input.ClassName}}_LOADING";
+export const EDIT_{{call .GetConstantName .Input.ClassName}}_LOADING_COMPLETE =
+  "@{{call .GetLowerConstantName .Input.ClassName}}/EDIT_{{call .GetConstantName .Input.ClassName}}_LOADING_COMPLETE";
+export const EDIT_{{call .GetConstantName .Input.ClassName}}_SUCCESS =
+  "@{{call .GetLowerConstantName .Input.ClassName}}/EDIT_{{call .GetConstantName .Input.ClassName}}_SUCCESS";
+export const EDIT_{{call .GetConstantName .Input.ClassName}}_FAILED =
+  "@{{call .GetLowerConstantName .Input.ClassName}}/EDIT_{{call .GetConstantName .Input.ClassName}}_FAILED";
 {{end}}
-{{if .List}}
-export function fetch{{.ClassName}}(params) {
+{{if .Input.List}}
+export function fetch{{.Input.ClassName}}(params) {
   return {
-    type: {{.getConstantName .ClassName}}_LIST_FETCH_START,
+    type: {{call .GetConstantName .Input.ClassName}}_LIST_FETCH_START,
     ...params,
   };
 }
 {{end}}
-{{if .Add}}
-export function add{{.ClassName}}(params) {
+{{if .Input.Add}}
+export function add{{.Input.ClassName}}(params) {
   return {
-    type: ADD_{{.getConstantName .ClassName}}_START,
+    type: ADD_{{call .GetConstantName .Input.ClassName}}_START,
     ...params,
   };
 }
 {{end}}
-{{if .Delete}}
-export function delete{{.ClassName}}(params) {
+{{if .Input.Delete}}
+export function delete{{.Input.ClassName}}(params) {
   return {
-    type: DELETE_{{.getConstantName .ClassName}}_START,
+    type: DELETE_{{call .GetConstantName .Input.ClassName}}_START,
     ...params,
   };
 }
 {{end}}
-{{if .Update}}
-export function edit{{.ClassName}}(params) {
+{{if .Input.Update}}
+export function edit{{.Input.ClassName}}(params) {
   return {
-    type: EDIT_{{.getConstantName .ClassName}}_START,
+    type: EDIT_{{call .GetConstantName .Input.ClassName}}_START,
     ...params,
   };
 }
 {{end}}
 
-export const admin{{.ClassName}}sReducer = (state = initialState, action) => {
+export const {{.Input.ClassName}}Reducer = (state = initialState, action) => {
   switch (action.type) {
-    case {{.getConstantName .ClassName}}_LIST_FETCH_LOADING:
+    case {{call .GetConstantName .Input.ClassName}}_LIST_FETCH_LOADING:
       return {
         ...state,
         error: undefined,
         isLoading: true,
       };
-    case {{.getConstantName .ClassName}}_LIST_FETCH_LOADING_COMPLETE:
+    case {{call .GetConstantName .Input.ClassName}}_LIST_FETCH_LOADING_COMPLETE:
       return {
         ...state,
         isLoading: false,
         isLoadingSave: false,
       };
-    case {{.getConstantName .ClassName}}_LIST_FETCH_SUCCESS:
+    case {{call .GetConstantName .Input.ClassName}}_LIST_FETCH_SUCCESS:
       const { response } = action;
       return {
         ...state,
@@ -121,7 +121,7 @@ export const admin{{.ClassName}}sReducer = (state = initialState, action) => {
         totalFeatures: response.meta.total_count,
         meta: response.meta,
       };
-    case {{.getConstantName .ClassName}}_LIST_FETCH_FAILED:
+    case {{call .GetConstantName .Input.ClassName}}_LIST_FETCH_FAILED:
       const { error } = action;
       return {
         ...state,
@@ -129,44 +129,44 @@ export const admin{{.ClassName}}sReducer = (state = initialState, action) => {
         isLoadingSave: false,
         error,
       };
-    case ADD_{{.getConstantName .ClassName}}_LOADING:
+    case ADD_{{call .GetConstantName .Input.ClassName}}_LOADING:
       return {
         ...state,
         error: undefined,
         isLoadingSave: true,
       };
-    case ADD_{{.getConstantName .ClassName}}_LOADING_COMPLETE:
+    case ADD_{{call .GetConstantName .Input.ClassName}}_LOADING_COMPLETE:
       return {
         ...state,
         isLoadingSave: false,
       };
-    case ADD_{{.getConstantName .ClassName}}_SUCCESS:
+    case ADD_{{call .GetConstantName .Input.ClassName}}_SUCCESS:
       return {
         ...state,
       };
-    case ADD_{{.getConstantName .ClassName}}_FAILED:
+    case ADD_{{call .GetConstantName .Input.ClassName}}_FAILED:
       const errorAdd = action;
       return {
         ...state,
         error: errorAdd,
         isLoadingSave: false,
       };
-    case DELETE_{{.getConstantName .ClassName}}_LOADING:
+    case DELETE_{{call .GetConstantName .Input.ClassName}}_LOADING:
       return {
         ...state,
         error: undefined,
         isLoadingSave: true,
       };
-    case DELETE_{{.getConstantName .ClassName}}_LOADING_COMPLETE:
+    case DELETE_{{call .GetConstantName .Input.ClassName}}_LOADING_COMPLETE:
       return {
         ...state,
         isLoadingSave: false,
       };
-    case DELETE_{{.getConstantName .ClassName}}_SUCCESS:
+    case DELETE_{{call .GetConstantName .Input.ClassName}}_SUCCESS:
       return {
         ...state,
       };
-    case DELETE_{{.getConstantName .ClassName}}_FAILED:
+    case DELETE_{{call .GetConstantName .Input.ClassName}}_FAILED:
       //  errorAdd = action;
       return {
         ...state,
@@ -174,22 +174,22 @@ export const admin{{.ClassName}}sReducer = (state = initialState, action) => {
         isLoadingSave: false,
       };
 
-    case EDIT_{{.getConstantName .ClassName}}_LOADING:
+    case EDIT_{{call .GetConstantName .Input.ClassName}}_LOADING:
       return {
         ...state,
         error: undefined,
         isLoadingSave: true,
       };
-    case EDIT_{{.getConstantName .ClassName}}_LOADING_COMPLETE:
+    case EDIT_{{call .GetConstantName .Input.ClassName}}_LOADING_COMPLETE:
       return {
         ...state,
         isLoadingSave: false,
       };
-    case EDIT_{{.getConstantName .ClassName}}_SUCCESS:
+    case EDIT_{{call .GetConstantName .Input.ClassName}}_SUCCESS:
       return {
         ...state,
       };
-    case EDIT_{{.getConstantName .ClassName}}_FAILED:
+    case EDIT_{{call .GetConstantName .Input.ClassName}}_FAILED:
       const errorEdit = action.error;
       return {
         ...state,
@@ -201,18 +201,18 @@ export const admin{{.ClassName}}sReducer = (state = initialState, action) => {
   }
 };
 
-export function get{{.ClassName}}List(state) {
-  return state.admin{{.ClassName}}Reducer.planFeatureList;
+export function get{{.Input.ClassName}}List(state) {
+  return state.admin{{.Input.ClassName}}Reducer.planFeatureList;
 }
 
-export function getTotal{{.ClassName}}(state) {
-  return state.admin{{.ClassName}}Reducer.totalFeatures;
+export function getTotal{{.Input.ClassName}}(state) {
+  return state.admin{{.Input.ClassName}}Reducer.totalFeatures;
 }
 
 export function getIsLoadingList(state) {
-  return state.admin{{.ClassName}}Reducer.isLoading;
+  return state.admin{{.Input.ClassName}}Reducer.isLoading;
 }
 
 export function getError(state) {
-  return state.admin{{.ClassName}}Reducer.error;
+  return state.admin{{.Input.ClassName}}Reducer.error;
 }
