@@ -4,114 +4,114 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <div class="content-wrapper">
-          <div class="content-header">
-            <div class="container-fluid">
-              <div class="row mb-2">
-                <div class="col-sm-6">
-                  <h1 class="m-0 text-dark">Dashboard</h1>
+        <div className="content-wrapper">
+          <div className="content-header">
+            <div className="container-fluid">
+              <div className="row mb-2">
+                <div className="col-sm-6">
+                  <h1 className="m-0 text-dark">Dashboard</h1>
                 </div>
-                <div class="col-sm-6">
-                  <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item">
+                <div className="col-sm-6">
+                  <ol className="breadcrumb float-sm-right">
+                    <li className="breadcrumb-item">
                       <a href="#">Home</a>
                     </li>
-                    <li class="breadcrumb-item active">Dashboard v1</li>
+                    <li className="breadcrumb-item active">Dashboard v1</li>
                   </ol>
                 </div>
               </div>
             </div>
           </div>
 
-          <section class="content">
-            <div class="container-fluid">
-              <div class="row">
-                <div class="col-lg-3 col-6">
-                  <div class="small-box bg-info">
-                    <div class="inner">
+          <section className="content">
+            <div className="container-fluid">
+              <div className="row">
+                <div className="col-lg-3 col-6">
+                  <div className="small-box bg-info">
+                    <div className="inner">
                       <h3>150</h3>
 
                       <p>New Orders</p>
                     </div>
-                    <div class="icon">
-                      <i class="ion ion-bag"></i>
+                    <div className="icon">
+                      <i className="ion ion-bag"></i>
                     </div>
-                    <a href="#" class="small-box-footer">
-                      More info <i class="fas fa-arrow-circle-right"></i>
+                    <a href="#" className="small-box-footer">
+                      More info <i className="fas fa-arrow-circle-right"></i>
                     </a>
                   </div>
                 </div>
-                <div class="col-lg-3 col-6">
-                  <div class="small-box bg-success">
-                    <div class="inner">
+                <div className="col-lg-3 col-6">
+                  <div className="small-box bg-success">
+                    <div className="inner">
                       <h3>
                         53<sup style={{fontSize: "20px"}}>%</sup>
                       </h3>
 
                       <p>Bounce Rate</p>
                     </div>
-                    <div class="icon">
-                      <i class="ion ion-stats-bars"></i>
+                    <div className="icon">
+                      <i className="ion ion-stats-bars"></i>
                     </div>
-                    <a href="#" class="small-box-footer">
-                      More info <i class="fas fa-arrow-circle-right"></i>
+                    <a href="#" className="small-box-footer">
+                      More info <i className="fas fa-arrow-circle-right"></i>
                     </a>
                   </div>
                 </div>
-                <div class="col-lg-3 col-6">
-                  <div class="small-box bg-warning">
-                    <div class="inner">
+                <div className="col-lg-3 col-6">
+                  <div className="small-box bg-warning">
+                    <div className="inner">
                       <h3>44</h3>
 
                       <p>User Registrations</p>
                     </div>
-                    <div class="icon">
-                      <i class="ion ion-person-add"></i>
+                    <div className="icon">
+                      <i className="ion ion-person-add"></i>
                     </div>
-                    <a href="#" class="small-box-footer">
-                      More info <i class="fas fa-arrow-circle-right"></i>
+                    <a href="#" className="small-box-footer">
+                      More info <i className="fas fa-arrow-circle-right"></i>
                     </a>
                   </div>
                 </div>
-                <div class="col-lg-3 col-6">
-                  <div class="small-box bg-danger">
-                    <div class="inner">
+                <div className="col-lg-3 col-6">
+                  <div className="small-box bg-danger">
+                    <div className="inner">
                       <h3>65</h3>
 
                       <p>Unique Visitors</p>
                     </div>
-                    <div class="icon">
-                      <i class="ion ion-pie-graph"></i>
+                    <div className="icon">
+                      <i className="ion ion-pie-graph"></i>
                     </div>
-                    <a href="#" class="small-box-footer">
-                      More info <i class="fas fa-arrow-circle-right"></i>
+                    <a href="#" className="small-box-footer">
+                      More info <i className="fas fa-arrow-circle-right"></i>
                     </a>
                   </div>
                 </div>
               </div>
 
-              <div class="row">
-                <section class="col-lg-7 connectedSortable">
-                  <div class="card">
-                    <div class="card-header">
-                      <h3 class="card-title">
-                        <i class="fas fa-chart-pie mr-1"></i>
+              <div className="row">
+                <section className="col-lg-7 connectedSortable">
+                  <div className="card">
+                    <div className="card-header">
+                      <h3 className="card-title">
+                        <i className="fas fa-chart-pie mr-1"></i>
                         Sales
                       </h3>
-                      <div class="card-tools">
-                        <ul class="nav nav-pills ml-auto">
-                          <li class="nav-item">
+                      <div className="card-tools">
+                        <ul className="nav nav-pills ml-auto">
+                          <li className="nav-item">
                             <a
-                              class="nav-link active"
+                              className="nav-link active"
                               href="#revenue-chart"
                               data-toggle="tab"
                             >
                               Area
                             </a>
                           </li>
-                          <li class="nav-item">
+                          <li className="nav-item">
                             <a
-                              class="nav-link"
+                              className="nav-link"
                               href="#sales-chart"
                               data-toggle="tab"
                             >
@@ -121,10 +121,10 @@ class Home extends React.Component {
                         </ul>
                       </div>
                     </div>
-                    <div class="card-body">
-                      <div class="tab-content p-0">
+                    <div className="card-body">
+                      <div className="tab-content p-0">
                         <div
-                          class="chart tab-pane active"
+                          className="chart tab-pane active"
                           id="revenue-chart"
                           style={{position: "relative", height: "300px"}}
                         >
@@ -135,7 +135,7 @@ class Home extends React.Component {
                           ></canvas>
                         </div>
                         <div
-                          class="chart tab-pane"
+                          className="chart tab-pane"
                           id="sales-chart"
                           style={{position: "relative", height: "300px"}}
                         >
@@ -149,139 +149,139 @@ class Home extends React.Component {
                     </div>
                   </div>
 
-                  <div class="card direct-chat direct-chat-primary">
-                    <div class="card-header">
-                      <h3 class="card-title">Direct Chat</h3>
+                  <div className="card direct-chat direct-chat-primary">
+                    <div className="card-header">
+                      <h3 className="card-title">Direct Chat</h3>
 
-                      <div class="card-tools">
+                      <div className="card-tools">
                         <span
                           data-toggle="tooltip"
                           title="3 New Messages"
-                          class="badge badge-primary"
+                          className="badge badge-primary"
                         >
                           3
                         </span>
                         <button
                           type="button"
-                          class="btn btn-tool"
+                          className="btn btn-tool"
                           data-card-widget="collapse"
                         >
-                          <i class="fas fa-minus"></i>
+                          <i className="fas fa-minus"></i>
                         </button>
                         <button
                           type="button"
-                          class="btn btn-tool"
+                          className="btn btn-tool"
                           data-toggle="tooltip"
                           title="Contacts"
                           data-widget="chat-pane-toggle"
                         >
-                          <i class="fas fa-comments"></i>
+                          <i className="fas fa-comments"></i>
                         </button>
                         <button
                           type="button"
-                          class="btn btn-tool"
+                          className="btn btn-tool"
                           data-card-widget="remove"
                         >
-                          <i class="fas fa-times"></i>
+                          <i className="fas fa-times"></i>
                         </button>
                       </div>
                     </div>
-                    <div class="card-body">
-                      <div class="direct-chat-messages">
-                        <div class="direct-chat-msg">
-                          <div class="direct-chat-infos clearfix">
-                            <span class="direct-chat-name float-left">
+                    <div className="card-body">
+                      <div className="direct-chat-messages">
+                        <div className="direct-chat-msg">
+                          <div className="direct-chat-infos clearfix">
+                            <span className="direct-chat-name float-left">
                               Alexander Pierce
                             </span>
-                            <span class="direct-chat-timestamp float-right">
+                            <span className="direct-chat-timestamp float-right">
                               23 Jan 2:00 pm
                             </span>
                           </div>
                           <img
-                            class="direct-chat-img"
+                            className="direct-chat-img"
                             src="dist/img/user1-128x128.jpg"
                             alt="message user image"
                           />
-                          <div class="direct-chat-text">
+                          <div className="direct-chat-text">
                             Is this template really for free? That's
                             unbelievable!
                           </div>
                         </div>
 
-                        <div class="direct-chat-msg right">
-                          <div class="direct-chat-infos clearfix">
-                            <span class="direct-chat-name float-right">
+                        <div className="direct-chat-msg right">
+                          <div className="direct-chat-infos clearfix">
+                            <span className="direct-chat-name float-right">
                               Sarah Bullock
                             </span>
-                            <span class="direct-chat-timestamp float-left">
+                            <span className="direct-chat-timestamp float-left">
                               23 Jan 2:05 pm
                             </span>
                           </div>
                           <img
-                            class="direct-chat-img"
+                            className="direct-chat-img"
                             src="dist/img/user3-128x128.jpg"
                             alt="message user image"
                           />
-                          <div class="direct-chat-text">
+                          <div className="direct-chat-text">
                             You better believe it!
                           </div>
                         </div>
 
-                        <div class="direct-chat-msg">
-                          <div class="direct-chat-infos clearfix">
-                            <span class="direct-chat-name float-left">
+                        <div className="direct-chat-msg">
+                          <div className="direct-chat-infos clearfix">
+                            <span className="direct-chat-name float-left">
                               Alexander Pierce
                             </span>
-                            <span class="direct-chat-timestamp float-right">
+                            <span className="direct-chat-timestamp float-right">
                               23 Jan 5:37 pm
                             </span>
                           </div>
                           <img
-                            class="direct-chat-img"
+                            className="direct-chat-img"
                             src="dist/img/user1-128x128.jpg"
                             alt="message user image"
                           />
-                          <div class="direct-chat-text">
+                          <div className="direct-chat-text">
                             Working with AdminLTE on a great new app! Wanna
                             join?
                           </div>
                         </div>
 
-                        <div class="direct-chat-msg right">
-                          <div class="direct-chat-infos clearfix">
-                            <span class="direct-chat-name float-right">
+                        <div className="direct-chat-msg right">
+                          <div className="direct-chat-infos clearfix">
+                            <span className="direct-chat-name float-right">
                               Sarah Bullock
                             </span>
-                            <span class="direct-chat-timestamp float-left">
+                            <span className="direct-chat-timestamp float-left">
                               23 Jan 6:10 pm
                             </span>
                           </div>
                           <img
-                            class="direct-chat-img"
+                            className="direct-chat-img"
                             src="dist/img/user3-128x128.jpg"
                             alt="message user image"
                           />
-                          <div class="direct-chat-text">I would love to.</div>
+                          <div className="direct-chat-text">I would love to.</div>
                         </div>
                       </div>
 
-                      <div class="direct-chat-contacts">
-                        <ul class="contacts-list">
+                      <div className="direct-chat-contacts">
+                        <ul className="contacts-list">
                           <li>
                             <a href="#">
                               <img
-                                class="contacts-list-img"
+                                className="contacts-list-img"
                                 src="dist/img/user1-128x128.jpg"
                               />
 
-                              <div class="contacts-list-info">
-                                <span class="contacts-list-name">
+                              <div className="contacts-list-info">
+                                <span className="contacts-list-name">
                                   Count Dracula
-                                  <small class="contacts-list-date float-right">
+                                  <small className="contacts-list-date float-right">
                                     2/28/2015
                                   </small>
                                 </span>
-                                <span class="contacts-list-msg">
+                                <span className="contacts-list-msg">
                                   How have you been? I was...
                                 </span>
                               </div>
@@ -290,18 +290,18 @@ class Home extends React.Component {
                           <li>
                             <a href="#">
                               <img
-                                class="contacts-list-img"
+                                className="contacts-list-img"
                                 src="dist/img/user7-128x128.jpg"
                               />
 
-                              <div class="contacts-list-info">
-                                <span class="contacts-list-name">
+                              <div className="contacts-list-info">
+                                <span className="contacts-list-name">
                                   Sarah Doe
-                                  <small class="contacts-list-date float-right">
+                                  <small className="contacts-list-date float-right">
                                     2/23/2015
                                   </small>
                                 </span>
-                                <span class="contacts-list-msg">
+                                <span className="contacts-list-msg">
                                   I will be waiting for...
                                 </span>
                               </div>
@@ -310,18 +310,18 @@ class Home extends React.Component {
                           <li>
                             <a href="#">
                               <img
-                                class="contacts-list-img"
+                                className="contacts-list-img"
                                 src="dist/img/user3-128x128.jpg"
                               />
 
-                              <div class="contacts-list-info">
-                                <span class="contacts-list-name">
+                              <div className="contacts-list-info">
+                                <span className="contacts-list-name">
                                   Nadia Jolie
-                                  <small class="contacts-list-date float-right">
+                                  <small className="contacts-list-date float-right">
                                     2/20/2015
                                   </small>
                                 </span>
-                                <span class="contacts-list-msg">
+                                <span className="contacts-list-msg">
                                   I'll call you back at...
                                 </span>
                               </div>
@@ -330,18 +330,18 @@ class Home extends React.Component {
                           <li>
                             <a href="#">
                               <img
-                                class="contacts-list-img"
+                                className="contacts-list-img"
                                 src="dist/img/user5-128x128.jpg"
                               />
 
-                              <div class="contacts-list-info">
-                                <span class="contacts-list-name">
+                              <div className="contacts-list-info">
+                                <span className="contacts-list-name">
                                   Nora S. Vans
-                                  <small class="contacts-list-date float-right">
+                                  <small className="contacts-list-date float-right">
                                     2/10/2015
                                   </small>
                                 </span>
-                                <span class="contacts-list-msg">
+                                <span className="contacts-list-msg">
                                   Where is your new...
                                 </span>
                               </div>
@@ -350,18 +350,18 @@ class Home extends React.Component {
                           <li>
                             <a href="#">
                               <img
-                                class="contacts-list-img"
+                                className="contacts-list-img"
                                 src="dist/img/user6-128x128.jpg"
                               />
 
-                              <div class="contacts-list-info">
-                                <span class="contacts-list-name">
+                              <div className="contacts-list-info">
+                                <span className="contacts-list-name">
                                   John K.
-                                  <small class="contacts-list-date float-right">
+                                  <small className="contacts-list-date float-right">
                                     1/27/2015
                                   </small>
                                 </span>
-                                <span class="contacts-list-msg">
+                                <span className="contacts-list-msg">
                                   Can I take a look at...
                                 </span>
                               </div>
@@ -370,18 +370,18 @@ class Home extends React.Component {
                           <li>
                             <a href="#">
                               <img
-                                class="contacts-list-img"
+                                className="contacts-list-img"
                                 src="dist/img/user8-128x128.jpg"
                               />
 
-                              <div class="contacts-list-info">
-                                <span class="contacts-list-name">
+                              <div className="contacts-list-info">
+                                <span className="contacts-list-name">
                                   Kenneth M.
-                                  <small class="contacts-list-date float-right">
+                                  <small className="contacts-list-date float-right">
                                     1/4/2015
                                   </small>
                                 </span>
-                                <span class="contacts-list-msg">
+                                <span className="contacts-list-msg">
                                   Never mind I found...
                                 </span>
                               </div>
@@ -390,17 +390,17 @@ class Home extends React.Component {
                         </ul>
                       </div>
                     </div>
-                    <div class="card-footer">
+                    <div className="card-footer">
                       <form action="#" method="post">
-                        <div class="input-group">
+                        <div className="input-group">
                           <input
                             type="text"
                             name="message"
                             placeholder="Type Message ..."
-                            class="form-control"
+                            className="form-control"
                           />
-                          <span class="input-group-append">
-                            <button type="button" class="btn btn-primary">
+                          <span className="input-group-append">
+                            <button type="button" className="btn btn-primary">
                               Send
                             </button>
                           </span>
@@ -409,51 +409,51 @@ class Home extends React.Component {
                     </div>
                   </div>
 
-                  <div class="card">
-                    <div class="card-header">
-                      <h3 class="card-title">
-                        <i class="ion ion-clipboard mr-1"></i>
+                  <div className="card">
+                    <div className="card-header">
+                      <h3 className="card-title">
+                        <i className="ion ion-clipboard mr-1"></i>
                         To Do List
                       </h3>
 
-                      <div class="card-tools">
-                        <ul class="pagination pagination-sm">
-                          <li class="page-item">
-                            <a href="#" class="page-link">
+                      <div className="card-tools">
+                        <ul className="pagination pagination-sm">
+                          <li className="page-item">
+                            <a href="#" className="page-link">
                               &laquo;
                             </a>
                           </li>
-                          <li class="page-item">
-                            <a href="#" class="page-link">
+                          <li className="page-item">
+                            <a href="#" className="page-link">
                               1
                             </a>
                           </li>
-                          <li class="page-item">
-                            <a href="#" class="page-link">
+                          <li className="page-item">
+                            <a href="#" className="page-link">
                               2
                             </a>
                           </li>
-                          <li class="page-item">
-                            <a href="#" class="page-link">
+                          <li className="page-item">
+                            <a href="#" className="page-link">
                               3
                             </a>
                           </li>
-                          <li class="page-item">
-                            <a href="#" class="page-link">
+                          <li className="page-item">
+                            <a href="#" className="page-link">
                               &raquo;
                             </a>
                           </li>
                         </ul>
                       </div>
                     </div>
-                    <div class="card-body">
-                      <ul class="todo-list" data-widget="todo-list">
+                    <div className="card-body">
+                      <ul className="todo-list" data-widget="todo-list">
                         <li>
-                          <span class="handle">
-                            <i class="fas fa-ellipsis-v"></i>
-                            <i class="fas fa-ellipsis-v"></i>
+                          <span className="handle">
+                            <i className="fas fa-ellipsis-v"></i>
+                            <i className="fas fa-ellipsis-v"></i>
                           </span>
-                          <div class="icheck-primary d-inline ml-2">
+                          <div className="icheck-primary d-inline ml-2">
                             <input
                               type="checkbox"
                               value=""
@@ -462,21 +462,21 @@ class Home extends React.Component {
                             />
                             <label htmlFor="todoCheck1"></label>
                           </div>
-                          <span class="text">Design a nice theme</span>
-                          <small class="badge badge-danger">
-                            <i class="far fa-clock"></i> 2 mins
+                          <span className="text">Design a nice theme</span>
+                          <small className="badge badge-danger">
+                            <i className="far fa-clock"></i> 2 mins
                           </small>
-                          <div class="tools">
-                            <i class="fas fa-edit"></i>
-                            <i class="fas fa-trash-o"></i>
+                          <div className="tools">
+                            <i className="fas fa-edit"></i>
+                            <i className="fas fa-trash-o"></i>
                           </div>
                         </li>
                         <li>
-                          <span class="handle">
-                            <i class="fas fa-ellipsis-v"></i>
-                            <i class="fas fa-ellipsis-v"></i>
+                          <span className="handle">
+                            <i className="fas fa-ellipsis-v"></i>
+                            <i className="fas fa-ellipsis-v"></i>
                           </span>
-                          <div class="icheck-primary d-inline ml-2">
+                          <div className="icheck-primary d-inline ml-2">
                             <input
                               type="checkbox"
                               value=""
@@ -485,21 +485,21 @@ class Home extends React.Component {
                             />
                             <label htmlFor="todoCheck2"></label>
                           </div>
-                          <span class="text">Make the theme responsive</span>
-                          <small class="badge badge-info">
-                            <i class="far fa-clock"></i> 4 hours
+                          <span className="text">Make the theme responsive</span>
+                          <small className="badge badge-info">
+                            <i className="far fa-clock"></i> 4 hours
                           </small>
-                          <div class="tools">
-                            <i class="fas fa-edit"></i>
-                            <i class="fas fa-trash-o"></i>
+                          <div className="tools">
+                            <i className="fas fa-edit"></i>
+                            <i className="fas fa-trash-o"></i>
                           </div>
                         </li>
                         <li>
-                          <span class="handle">
-                            <i class="fas fa-ellipsis-v"></i>
-                            <i class="fas fa-ellipsis-v"></i>
+                          <span className="handle">
+                            <i className="fas fa-ellipsis-v"></i>
+                            <i className="fas fa-ellipsis-v"></i>
                           </span>
-                          <div class="icheck-primary d-inline ml-2">
+                          <div className="icheck-primary d-inline ml-2">
                             <input
                               type="checkbox"
                               value=""
@@ -508,21 +508,21 @@ class Home extends React.Component {
                             />
                             <label htmlFor="todoCheck3"></label>
                           </div>
-                          <span class="text">Let theme shine like a star</span>
-                          <small class="badge badge-warning">
-                            <i class="far fa-clock"></i> 1 day
+                          <span className="text">Let theme shine like a star</span>
+                          <small className="badge badge-warning">
+                            <i className="far fa-clock"></i> 1 day
                           </small>
-                          <div class="tools">
-                            <i class="fas fa-edit"></i>
-                            <i class="fas fa-trash-o"></i>
+                          <div className="tools">
+                            <i className="fas fa-edit"></i>
+                            <i className="fas fa-trash-o"></i>
                           </div>
                         </li>
                         <li>
-                          <span class="handle">
-                            <i class="fas fa-ellipsis-v"></i>
-                            <i class="fas fa-ellipsis-v"></i>
+                          <span className="handle">
+                            <i className="fas fa-ellipsis-v"></i>
+                            <i className="fas fa-ellipsis-v"></i>
                           </span>
-                          <div class="icheck-primary d-inline ml-2">
+                          <div className="icheck-primary d-inline ml-2">
                             <input
                               type="checkbox"
                               value=""
@@ -531,21 +531,21 @@ class Home extends React.Component {
                             />
                             <label htmlFor="todoCheck4"></label>
                           </div>
-                          <span class="text">Let theme shine like a star</span>
-                          <small class="badge badge-success">
-                            <i class="far fa-clock"></i> 3 days
+                          <span className="text">Let theme shine like a star</span>
+                          <small className="badge badge-success">
+                            <i className="far fa-clock"></i> 3 days
                           </small>
-                          <div class="tools">
-                            <i class="fas fa-edit"></i>
-                            <i class="fas fa-trash-o"></i>
+                          <div className="tools">
+                            <i className="fas fa-edit"></i>
+                            <i className="fas fa-trash-o"></i>
                           </div>
                         </li>
                         <li>
-                          <span class="handle">
-                            <i class="fas fa-ellipsis-v"></i>
-                            <i class="fas fa-ellipsis-v"></i>
+                          <span className="handle">
+                            <i className="fas fa-ellipsis-v"></i>
+                            <i className="fas fa-ellipsis-v"></i>
                           </span>
-                          <div class="icheck-primary d-inline ml-2">
+                          <div className="icheck-primary d-inline ml-2">
                             <input
                               type="checkbox"
                               value=""
@@ -554,23 +554,23 @@ class Home extends React.Component {
                             />
                             <label htmlFor="todoCheck5"></label>
                           </div>
-                          <span class="text">
+                          <span className="text">
                             Check your messages and notifications
                           </span>
-                          <small class="badge badge-primary">
-                            <i class="far fa-clock"></i> 1 week
+                          <small className="badge badge-primary">
+                            <i className="far fa-clock"></i> 1 week
                           </small>
-                          <div class="tools">
-                            <i class="fas fa-edit"></i>
-                            <i class="fas fa-trash-o"></i>
+                          <div className="tools">
+                            <i className="fas fa-edit"></i>
+                            <i className="fas fa-trash-o"></i>
                           </div>
                         </li>
                         <li>
-                          <span class="handle">
-                            <i class="fas fa-ellipsis-v"></i>
-                            <i class="fas fa-ellipsis-v"></i>
+                          <span className="handle">
+                            <i className="fas fa-ellipsis-v"></i>
+                            <i className="fas fa-ellipsis-v"></i>
                           </span>
-                          <div class="icheck-primary d-inline ml-2">
+                          <div className="icheck-primary d-inline ml-2">
                             <input
                               type="checkbox"
                               value=""
@@ -579,112 +579,112 @@ class Home extends React.Component {
                             />
                             <label htmlFor="todoCheck6"></label>
                           </div>
-                          <span class="text">Let theme shine like a star</span>
-                          <small class="badge badge-secondary">
-                            <i class="far fa-clock"></i> 1 month
+                          <span className="text">Let theme shine like a star</span>
+                          <small className="badge badge-secondary">
+                            <i className="far fa-clock"></i> 1 month
                           </small>
-                          <div class="tools">
-                            <i class="fas fa-edit"></i>
-                            <i class="fas fa-trash-o"></i>
+                          <div className="tools">
+                            <i className="fas fa-edit"></i>
+                            <i className="fas fa-trash-o"></i>
                           </div>
                         </li>
                       </ul>
                     </div>
-                    <div class="card-footer clearfix">
-                      <button type="button" class="btn btn-info float-right">
-                        <i class="fas fa-plus"></i> Add item
+                    <div className="card-footer clearfix">
+                      <button type="button" className="btn btn-info float-right">
+                        <i className="fas fa-plus"></i> Add item
                       </button>
                     </div>
                   </div>
                 </section>
-                {/* <section class="col-lg-5 connectedSortable">
-                  <div class="card bg-gradient-primary">
-                    <div class="card-header border-0">
-                      <h3 class="card-title">
-                        <i class="fas fa-map-marker-alt mr-1"></i>
+                <section className="col-lg-5 connectedSortable">
+                  <div className="card bg-gradient-primary">
+                    <div className="card-header border-0">
+                      <h3 className="card-title">
+                        <i className="fas fa-map-marker-alt mr-1"></i>
                         Visitors
                       </h3>
-                      <div class="card-tools">
+                      <div className="card-tools">
                         <button
                           type="button"
-                          class="btn btn-primary btn-sm daterange"
+                          className="btn btn-primary btn-sm daterange"
                           data-toggle="tooltip"
                           title="Date range"
                         >
-                          <i class="far fa-calendar-alt"></i>
+                          <i className="far fa-calendar-alt"></i>
                         </button>
                         <button
                           type="button"
-                          class="btn btn-primary btn-sm"
+                          className="btn btn-primary btn-sm"
                           data-card-widget="collapse"
                           data-toggle="tooltip"
                           title="Collapse"
                         >
-                          <i class="fas fa-minus"></i>
+                          <i className="fas fa-minus"></i>
                         </button>
                       </div>
                     </div>
-                    <div class="card-body">
+                    <div className="card-body">
                       <div
                         id="world-map"
-                        style="height: 250px; width: 100%;"
+                        style={{height: "250px", width: "100%"}}
                       ></div>
                     </div>
-                    <div class="card-footer bg-transparent">
-                      <div class="row">
-                        <div class="col-4 text-center">
+                    <div className="card-footer bg-transparent">
+                      <div className="row">
+                        <div className="col-4 text-center">
                           <div id="sparkline-1"></div>
-                          <div class="text-white">Visitors</div>
+                          <div className="text-white">Visitors</div>
                         </div>
-                        <div class="col-4 text-center">
+                        <div className="col-4 text-center">
                           <div id="sparkline-2"></div>
-                          <div class="text-white">Online</div>
+                          <div className="text-white">Online</div>
                         </div>
-                        <div class="col-4 text-center">
+                        <div className="col-4 text-center">
                           <div id="sparkline-3"></div>
-                          <div class="text-white">Sales</div>
+                          <div className="text-white">Sales</div>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  <div class="card bg-gradient-info">
-                    <div class="card-header border-0">
-                      <h3 class="card-title">
-                        <i class="fas fa-th mr-1"></i>
+                  <div className="card bg-gradient-info">
+                    <div className="card-header border-0">
+                      <h3 className="card-title">
+                        <i className="fas fa-th mr-1"></i>
                         Sales Graph
                       </h3>
 
-                      <div class="card-tools">
+                      <div className="card-tools">
                         <button
                           type="button"
-                          class="btn bg-info btn-sm"
+                          className="btn bg-info btn-sm"
                           data-card-widget="collapse"
                         >
-                          <i class="fas fa-minus"></i>
+                          <i className="fas fa-minus"></i>
                         </button>
                         <button
                           type="button"
-                          class="btn bg-info btn-sm"
+                          className="btn bg-info btn-sm"
                           data-card-widget="remove"
                         >
-                          <i class="fas fa-times"></i>
+                          <i className="fas fa-times"></i>
                         </button>
                       </div>
                     </div>
-                    <div class="card-body">
+                    <div className="card-body">
                       <canvas
-                        class="chart"
+                        className="chart"
                         id="line-chart"
-                        style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"
+                        style={{minHeight: "250px", height: "250px", maxHeight: "250px", maxWidth: "100%"}}
                       ></canvas>
                     </div>
-                    <div class="card-footer bg-transparent">
-                      <div class="row">
-                        <div class="col-4 text-center">
+                    <div className="card-footer bg-transparent">
+                      <div className="row">
+                        <div className="col-4 text-center">
                           <input
                             type="text"
-                            class="knob"
+                            className="knob"
                             data-readonly="true"
                             value="20"
                             data-width="60"
@@ -692,12 +692,12 @@ class Home extends React.Component {
                             data-fgColor="#39CCCC"
                           />
 
-                          <div class="text-white">Mail-Orders</div>
+                          <div className="text-white">Mail-Orders</div>
                         </div>
-                        <div class="col-4 text-center">
+                        <div className="col-4 text-center">
                           <input
                             type="text"
-                            class="knob"
+                            className="knob"
                             data-readonly="true"
                             value="50"
                             data-width="60"
@@ -705,12 +705,12 @@ class Home extends React.Component {
                             data-fgColor="#39CCCC"
                           />
 
-                          <div class="text-white">Online</div>
+                          <div className="text-white">Online</div>
                         </div>
-                        <div class="col-4 text-center">
+                        <div className="col-4 text-center">
                           <input
                             type="text"
-                            class="knob"
+                            className="knob"
                             data-readonly="true"
                             value="30"
                             data-width="60"
@@ -718,61 +718,61 @@ class Home extends React.Component {
                             data-fgColor="#39CCCC"
                           />
 
-                          <div class="text-white">In-Store</div>
+                          <div className="text-white">In-Store</div>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  <div class="card bg-gradient-success">
-                    <div class="card-header border-0">
-                      <h3 class="card-title">
-                        <i class="far fa-calendar-alt"></i>
+                  <div className="card bg-gradient-success">
+                    <div className="card-header border-0">
+                      <h3 className="card-title">
+                        <i className="far fa-calendar-alt"></i>
                         Calendar
                       </h3>
-                      <div class="card-tools">
-                        <div class="btn-group">
+                      <div className="card-tools">
+                        <div className="btn-group">
                           <button
                             type="button"
-                            class="btn btn-success btn-sm dropdown-toggle"
+                            className="btn btn-success btn-sm dropdown-toggle"
                             data-toggle="dropdown"
                           >
-                            <i class="fas fa-bars"></i>
+                            <i className="fas fa-bars"></i>
                           </button>
-                          <div class="dropdown-menu float-right" role="menu">
-                            <a href="#" class="dropdown-item">
+                          <div className="dropdown-menu float-right" role="menu">
+                            <a href="#" className="dropdown-item">
                               Add new event
                             </a>
-                            <a href="#" class="dropdown-item">
+                            <a href="#" className="dropdown-item">
                               Clear events
                             </a>
-                            <div class="dropdown-divider"></div>
-                            <a href="#" class="dropdown-item">
+                            <div className="dropdown-divider"></div>
+                            <a href="#" className="dropdown-item">
                               View calendar
                             </a>
                           </div>
                         </div>
                         <button
                           type="button"
-                          class="btn btn-success btn-sm"
+                          className="btn btn-success btn-sm"
                           data-card-widget="collapse"
                         >
-                          <i class="fas fa-minus"></i>
+                          <i className="fas fa-minus"></i>
                         </button>
                         <button
                           type="button"
-                          class="btn btn-success btn-sm"
+                          className="btn btn-success btn-sm"
                           data-card-widget="remove"
                         >
-                          <i class="fas fa-times"></i>
+                          <i className="fas fa-times"></i>
                         </button>
                       </div>
                     </div>
-                    <div class="card-body pt-0">
-                      <div id="calendar" style="width: 100%"></div>
+                    <div className="card-body pt-0">
+                      <div id="calendar" style={{width: "100%"}}></div>
                     </div>
                   </div>
-                </section> */}
+                </section>
               </div>
             </div>
           </section>
