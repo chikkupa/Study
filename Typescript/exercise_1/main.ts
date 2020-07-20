@@ -1,4 +1,4 @@
-import { LikeComponent } from './like.component'
+import { LikeComponent } from "./like.component";
 
 let log = (message: String) => { console.log(message); }
 //Create a new like button
