@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Courses</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@ionic/core@latest/css/ionic.bundle.css"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/@ionic/core@latest/dist/ionic/ionic.esm.js"
+    ></script>
+    <script
+      nomodule=""
+      src="https://unpkg.com/@ionic/core@latest/dist/ionic/ionic.js"
+    ></script>
+  </head>
+  <body>
+    <ion-app>
+      <ion-header>
+        <ion-toolbar color="primary">
+          <ion-title>Courses</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-card>
+                <ion-card-header>
+                  <ion-card-title>New Course</ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                  <ion-item>
+                    <ion-label position="floating">Course Name</ion-label>
+                    <ion-input type="text" id="course-name"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label position="floating">Rating</ion-label>
+                    <ion-input type="number" id="course-rating"></ion-input>
+                  </ion-item>
+                  <div margin-vertical text-right></div>
+                    <ion-button id="button-add">
+                        <ion-icon slot="start" name="add"></ion-icon>
+                        Add Course
+                    </ion-button>
+                </div>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+          <ion-row> 
+              <ion-col>
+                  <ion-list id="course-list"></ion-list>
+              </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-content>
+    </ion-app>
+    <script src="app.js"></script>
+  </body>
+</html>
