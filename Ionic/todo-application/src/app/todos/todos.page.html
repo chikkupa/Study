@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Todos</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)='gotoAddTodo()'>
+        <ion-icon name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-todo *ngFor="let todo of todolist"
+    [category]="todo.category"
+    [title]="todo.title"
+    [description]="todo.description"
+    [id]="todo.id"
+    [deleteTodo]="deleteTodo"
+  ></app-todo>
+</ion-content>
